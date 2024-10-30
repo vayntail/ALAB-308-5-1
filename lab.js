@@ -73,3 +73,26 @@ console.log(sumOfAges)
 // Calculate average age 
 let avgAge = sumOfAges / dataArr.length;
 console.log(avgAge);
+
+
+// ================= PART 3: Thinking Critically =================
+objectTest = {};
+objectTest2 = {age: 35};
+
+
+function incrementAgeField(object) {
+    // Takes an object and increment its age field
+    "age" in object? object.age += 1 : object.age = 0;
+    object.update_at = new Date();
+    return object;
+}
+
+function incrementAgeFieldCopy(object) {
+    // Takes an object, make copy, and increment age field of copy
+    const copy = { ...object };
+    copy.age += 1;
+    copy.update_at = new Date();
+    return copy;
+}
+
+console.log(incrementAgeField(objectTest).age);
